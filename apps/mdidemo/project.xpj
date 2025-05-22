@@ -1,0 +1,54 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    MDIDEMO.exe
+
+[MDIDEMO.exe]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    dmlb.ch
+    appevent.ch
+    font.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    gra.ch
+    xbp.ch
+    std.ch
+    common.ch
+    set.ch
+    mdidemo.ch
+    natmsg.ch
+    MDIDEMO.res
+    DATADLG.obj
+    DBESYS.obj
+    MDICUST.obj
+    MDIDEMO.obj
+    MDIMENU.obj
+    MDIPART.obj
+    SEEKDLG.obj
+// $STOP-AUTODEPEND
+    MDIDEMO.ARC
+    mdidemo.upsize
+    DATADLG.PRG
+    DBESYS.PRG
+    MDICUST.PRG
+    MDIDEMO.PRG
+    MDIMENU.PRG
+    MDIPART.PRG
+    SEEKDLG.PRG
+

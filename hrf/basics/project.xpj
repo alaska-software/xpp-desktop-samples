@@ -1,0 +1,88 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    CUSTOMER.EXE
+    CUSTTABL.EXE
+    PLAIN.EXE
+
+[CUSTOMER.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = 
+    RC_COMPILE    = ARC
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    prompt.ch
+    collat.ch
+    dll.ch
+    get.ch
+    std.ch
+    memvar.ch
+    set.ch
+    sql.ch
+    natmsg.ch
+    CUSTOMER.obj
+    SHELL.obj
+// $STOP-AUTODEPEND
+    CUSTOMER.PRG
+    SHELL.PRG
+
+[CUSTTABL.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = 
+    RC_COMPILE    = ARC
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    prompt.ch
+    collat.ch
+    dll.ch
+    get.ch
+    std.ch
+    memvar.ch
+    set.ch
+    sql.ch
+    natmsg.ch
+    CUSTTABL.obj
+    SHELL.obj
+// $STOP-AUTODEPEND
+    CUSTTABL.PRG
+    SHELL.PRG
+
+[PLAIN.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = 
+    RC_COMPILE    = ARC
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    PLAIN.obj
+// $STOP-AUTODEPEND
+    PLAIN.PRG
+

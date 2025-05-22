@@ -1,0 +1,7 @@
+00001Spock Enterprises In                    N02,45Galactica           
+00002Bogart Software                         Y02,45Malta               
+00003Wayne-Soft                              N04,90Denver /Col         
+00004Texas Software Inc.                     Y07,35Dallas              
+00005Dietrich-EDV                            N09,80Potsdam             
+00006Monroe & Partner                        Y12,25Hollywood           
+00007Smart Guys Inc.     The problem solvers N14,70Washington          

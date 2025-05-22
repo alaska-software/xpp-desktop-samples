@@ -1,0 +1,96 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    CHILDWIN.EXE
+    MODALITY.EXE
+    OWNERWIN.EXE
+
+[CHILDWIN.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = 
+    RC_COMPILE    = ARC
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    appevent.ch
+    common.ch
+    font.ch
+    gra.ch
+    xbp.ch
+    CHILDWIN.obj
+// $STOP-AUTODEPEND
+    CHILDWIN.PRG
+
+[MODALITY.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = 
+    RC_COMPILE    = ARC
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    appevent.ch
+    font.ch
+    gra.ch
+    xbp.ch
+    MODALITY.obj
+// $STOP-AUTODEPEND
+    MODALITY.PRG
+
+[OWNERWIN.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = 
+    RC_COMPILE    = ARC
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    appevent.ch
+    common.ch
+    font.ch
+    gra.ch
+    xbp.ch
+    OWNERWIN.obj
+// $STOP-AUTODEPEND
+    OWNERWIN.PRG
+

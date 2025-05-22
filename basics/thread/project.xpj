@@ -1,0 +1,65 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    COFFEE.EXE
+    WORMS.EXE
+
+[COFFEE.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = no
+    LINKER        = ALINK
+    LINK_FLAGS    = 
+    RC_COMPILE    = ARC
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    COFFEE.obj
+// $STOP-AUTODEPEND
+    COFFEE.PRG
+
+[WORMS.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = 
+    RC_COMPILE    = ARC
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    font.ch
+    worms.ch
+    appevent.ch
+    gra.ch
+    thread.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    natmsg.ch
+    xbp.ch
+    get.ch
+    std.ch
+    prompt.ch
+    set.ch
+    WORMS.res
+    WORMS.obj
+// $STOP-AUTODEPEND
+    WORMS.ARC
+    WORMS.PRG
+

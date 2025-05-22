@@ -1,0 +1,93 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    LOGIN_G.EXE
+    LOGIN_H.EXE
+    LOGIN_T.EXE
+
+[LOGIN_G.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = 
+    RC_COMPILE    = ARC
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    appevent.ch
+    collat.ch
+    gra.ch
+    xbp.ch
+    prompt.ch
+    memvar.ch
+    set.ch
+    sql.ch
+    natmsg.ch
+    std.ch
+    get.ch
+    LOGIN.res
+    LOGIN_G.obj
+// $STOP-AUTODEPEND
+    LOGIN.ARC
+    LOGIN_G.PRG
+
+[LOGIN_H.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = 
+    RC_COMPILE    = ARC
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    xbp.ch
+    collat.ch
+    appevent.ch
+    gra.ch
+    prompt.ch
+    memvar.ch
+    set.ch
+    sql.ch
+    natmsg.ch
+    std.ch
+    get.ch
+    LOGIN.res
+    LOGIN_H.obj
+// $STOP-AUTODEPEND
+    LOGIN.ARC
+    LOGIN_H.PRG
+
+[LOGIN_T.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = no
+    LINKER        = ALINK
+    LINK_FLAGS    = 
+    RC_COMPILE    = ARC
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    inkey.ch
+    LOGIN_T.obj
+// $STOP-AUTODEPEND
+    LOGIN_T.PRG
+

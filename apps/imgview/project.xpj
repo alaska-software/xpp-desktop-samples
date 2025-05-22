@@ -1,0 +1,41 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    IMGVIEW.EXE
+
+[IMGVIEW.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = -q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    font.ch
+    xbp.ch
+    appevent.ch
+    imgview.ch
+    common.ch
+    gra.ch
+    collat.ch
+    sql.ch
+    natmsg.ch
+    directry.ch
+    get.ch
+    std.ch
+    prompt.ch
+    set.ch
+    memvar.ch
+    IMGVIEW.res
+    IMGVIEW.obj
+// $STOP-AUTODEPEND
+    IMGVIEW.ARC
+    IMGVIEW.PRG
+

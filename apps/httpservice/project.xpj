@@ -1,0 +1,71 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    HTTPSERVICE.EXE
+    HTTPCTR.EXE
+
+[HTTPSERVICE.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q
+    DEBUG_SAVE    = yes
+    GUI           = no
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    collat.ch
+    socket.ch
+    os.ch
+    fileio.ch
+    prompt.ch
+    memvar.ch
+    std.ch
+    sql.ch
+    set.ch
+    service.ch
+    natmsg.ch
+    get.ch
+    HTTPJOB.obj
+    HTTPSERVER.obj
+    HTTPSERVICE.obj
+    LOGGER.obj
+// $STOP-AUTODEPEND
+    HTTPJOB.PRG
+    HTTPSERVER.PRG
+    HTTPSERVICE.PRG
+    LOGGER.PRG
+
+[HTTPCTR.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q
+    DEBUG_SAVE    = yes
+    GUI           = no
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    service.ch
+    os.ch
+    simpleio.ch
+    fileio.ch
+    HTTPCTR.obj
+// $STOP-AUTODEPEND
+    HTTPCTR.PRG
+

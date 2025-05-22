@@ -1,0 +1,20 @@
+; Format information
+; Empty lines and lines that start with a semicolon are ignored
+;
+
+[USERS]
+; USERID=User Name
+
+MJ=Mick Jagger
+RG=Rory Gallagher
+TT=Tina Turner
+AE=Albert Einstein
+WB=Wernher von Braun
+
+[GROUPS]
+ALL=All
+
+; GROUPID=Group name,UserID,UserID,UserID
+
+MUS=Music Group,MJ,RG,TT
+SCI=Science Group,AE,WH

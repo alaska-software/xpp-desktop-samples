@@ -1,0 +1,44 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    NBMAIL.EXE
+
+[NBMAIL.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      = 
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    APPEVENT.CH
+    BUSYBOX.CH
+    COLLAT.CH
+    COMMON.CH
+    GET.CH
+    GRA.CH
+    MEMVAR.CH
+    NATMSG.CH
+    PROMPT.CH
+    SET.CH
+    STD.CH
+    XBP.CH
+    BUSYBOX.RES
+    BUSYBOX.obj
+    MAILREAD.obj
+    MAILSEND.obj
+// $STOP-AUTODEPEND
+    BUSYBOX.ARC
+    XBTBASE1.LIB
+    XBTNETB.LIB
+    BUSYBOX.PRG
+    MAILREAD.PRG
+    MAILSEND.PRG
+

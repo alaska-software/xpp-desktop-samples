@@ -1,0 +1,47 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    SDIDEMO.EXE
+
+[SDIDEMO.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = -q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    xbp.ch
+    gra.ch
+    common.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    std.ch
+    sdidemo.ch
+    set.ch
+    appevent.ch
+    natmsg.ch
+    DBESYS.obj
+    SDICUST.obj
+    SDIDEMO.obj
+    SDIDIALG.obj
+    SDIMENU.obj
+    SDIPART.obj
+// $STOP-AUTODEPEND
+    DBESYS.PRG
+    SDICUST.PRG
+    SDIDEMO.PRG
+    SDIDIALG.PRG
+    SDIMENU.PRG
+    SDIPART.PRG
+

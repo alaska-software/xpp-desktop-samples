@@ -1,0 +1,42 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    APPDEMO.EXE
+
+[APPDEMO.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = -q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    appevent.ch
+    appbrow.ch
+    gra.ch
+    font.ch
+    common.ch
+    app.ch
+    collat.ch
+    sql.ch
+    natmsg.ch
+    xbp.ch
+    get.ch
+    std.ch
+    prompt.ch
+    appedit.ch
+    memvar.ch
+    set.ch
+    APPDEMO.res
+    APPDEMO.obj
+// $STOP-AUTODEPEND
+    APPDEMO.ARC
+    APPDEMO.PRG
+

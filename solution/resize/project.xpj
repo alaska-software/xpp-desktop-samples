@@ -1,0 +1,69 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    PICKLIST.EXE
+    SLEDLG.EXE
+
+[PICKLIST.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = -q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    xbp.ch
+    collat.ch
+    appevent.ch
+    gra.ch
+    prompt.ch
+    memvar.ch
+    set.ch
+    sql.ch
+    natmsg.ch
+    common.ch
+    get.ch
+    std.ch
+    GROUPMGR.obj
+    PICKLIST.obj
+// $STOP-AUTODEPEND
+    GROUPMGR.PRG
+    PICKLIST.PRG
+
+[SLEDLG.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = -q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    xbp.ch
+    collat.ch
+    appevent.ch
+    gra.ch
+    prompt.ch
+    memvar.ch
+    set.ch
+    sql.ch
+    natmsg.ch
+    common.ch
+    get.ch
+    std.ch
+    GROUPMGR.obj
+    SLEDLG.obj
+// $STOP-AUTODEPEND
+    GROUPMGR.PRG
+    SLEDLG.PRG
+

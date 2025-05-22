@@ -1,0 +1,16 @@
+//////////////////////////////////////////////////////////////////////
+//
+//  APPDEMO.ARC
+//
+//  Copyright:
+//      Alaska Software, (c) 1997-2025. All rights reserved.         
+//  
+//  Contents:
+//      Definitions for user defined Application Part resources
+//   
+//////////////////////////////////////////////////////////////////////
+
+
+BITMAP 2001 = "blue.bmp"
+
+/* EOF */

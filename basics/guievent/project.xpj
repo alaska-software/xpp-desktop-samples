@@ -1,0 +1,115 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    SHUTDOWN.EXE
+    USERPBN.EXE
+    USERSLE.EXE
+    USREVENT.EXE
+
+[SHUTDOWN.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = -q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    xbp.ch
+    appevent.ch
+    SHUTDOWN.obj
+// $STOP-AUTODEPEND
+    SHUTDOWN.PRG
+
+[USERPBN.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = -q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    appevent.ch
+    xbp.ch
+    USERPBN.obj
+// $STOP-AUTODEPEND
+    USERPBN.PRG
+
+[USERSLE.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = -q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    appevent.ch
+    xbp.ch
+    USERSLE.obj
+// $STOP-AUTODEPEND
+    USERSLE.PRG
+
+[USREVENT.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = -q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    appevent.ch
+    xbp.ch
+    USREVENT.obj
+// $STOP-AUTODEPEND
+    USREVENT.PRG
+

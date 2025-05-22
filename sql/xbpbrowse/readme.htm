@@ -1,0 +1,91 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>default sample readme</title>
+</head>
+<style>
+h1{
+  width:100%;
+  background-color: #298BF0;
+  color: #f7f7ff;
+  padding: 3px;
+  margin-top:0px;
+  padding-top:0px;
+  margin-bottom:10px;
+  font-size:24pt;
+}
+h2{
+  color: #298BF0;
+  font-size:14pt;
+  margin-bottom:0px;
+}
+h2 + p{
+  margin-top:5px;
+  font-size:10pt;
+}
+
+
+h3{
+  color: #ff9720;
+  font-size:10pt;
+  margin-top:0px;
+  margin-bottom:0px;
+  width:10%;
+}
+h3 + p{
+  margin-top:0px;
+  margin-bottom:5px;
+  font-size:10pt;
+  width:70%;
+}
+</style>
+<body bgcolor="#FFFFFF" style="font-family: Verdana, Arial, Helvetica, sans-serif;font-size:10pt;">
+
+<h1>Sample: SqlBrowse</h1>
+
+<h2>Summary:</h2>
+<p>The purpose of this sample is to illustrate the usage of mixed ISAM and SQL code when using the PostgreSQL server. In fact,
+the sample uses an XbpBrowse() to view an SQL result set of an ISAM emulating table on the Postgres server. This table is
+created via an upsize of the customers.dbf ISAM table prior to running the example. Also shown in this example
+is how a record in the SQL result can be updated in the ISAM emulating table using ISAM code.
+<h2>Files:</h2>
+<ul>
+<li><b>main.prg: </b>Entry point of the application. Implements form creation and application startup.</li>
+<li><b>upsize.prg: </b>Verifies if a database and table is available at a remote server. Implements the upsize process.</li>
+<li><b>form.prg: </b>XbpDialog-based browse form and the edit form.</li>
+<li><b>smartform.prg: </b>XbpHTMLWindow-based generic form class</li>
+<li><b>northwind-customers.upsize: </b>The upsize definition used to upsize the sample data to the SQL server.</li>
+<li><b>resource.arc: </b>Resource file defining the application manifest.</li>
+</ul>
+<h2>Description:</h2>
+<p>All navigational features required by the XbpBrowse() class, such as skip blocks and
+the usage of the percentage-based functions DbPosition() and DbGoPosition(), are supported
+for all SQL result sets. Therefore, the XbpBrowse() class can be used
+consistently for DBF tables as well as ISAM tables on the PostgreSQL server. In
+addition, the XbpBrowse() class can be used for result sets retrieved using the
+SQL SELECT command. In all these cases, full navigational support is provided.<p>
+In addition, this sample also shows
+the following concepts:</p>
+<ul>
+<li>Testing for database and table existence using DacInfo()</li>
+<li>Programmatic creation of a database on the PostgreSQL server</li>
+<li>Programmatic usage of the DbfUpsize mechanism</li>
+<li>Execution of SQL statements using the SQLStatement class</li>
+<li>Usage of the XbpHTMLWindow() to create HTML based forms</li>
+</ul>
+
+<h2>Requirements:</h2>
+<ul>
+<li>Xbase++ 2.00.850 or higher.</li>
+<li>Installed PostgreSQL server on localhost. Alternatively, the
+connection parameters in the .upsize file and the connection string
+in main.prg must be adapted to your infrastructure setup.</li>
+</ul>
+
+<h3>Keywords:</h3><p>SQL, XbpBrowse, Postgres, Upsize, DbPosition(), DbGoPosition()</p>
+<h3>Author:</h3><p>Alaska Software</p>
+
+
+</body>
+<html>

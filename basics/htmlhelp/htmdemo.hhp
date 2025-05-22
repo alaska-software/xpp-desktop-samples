@@ -1,0 +1,35 @@
+[OPTIONS]
+Compatibility=1.1
+Compiled file=htmdemoe.chm
+Contents file=htmdemo.hhc
+Default Window=main
+Default topic=html\contents.htm
+Display compile progress=No
+Full-text search=Yes
+Index file=htmdemo.hhk
+Language=0x409 English (USA)
+
+[WINDOWS]
+main="Xbase++ HTML Help Demo","htmdemo.hhc","htmdemo.hhk",,,,,,,0x2520,,0x307e,[438,10,1273,289],0xb0000,,,0,,,
+
+
+[FILES]
+html\aadd.htm
+html\contents.htm
+html\entry1.htm
+html\entry2.htm
+html\entry3.htm
+html\tag_char.htm
+html\tag_clr.htm
+html\tag_dl.htm
+html\tag_h.htm
+html\tag_img.htm
+html\tag_jmp.htm
+html\tag_lnk.htm
+html\tag_mgn.htm
+html\tag_ol.htm
+html\tag_p.htm
+html\tag_tbl.htm
+html\tag_ul.htm
+html\xbp_help.htm
+

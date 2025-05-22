@@ -1,0 +1,122 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+   <title>websockets client</title>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+   <script type="text/javascript">
+      //The url is fed in from the server before the page is
+      //delivered to the browser
+      var url    = "<!--[URL]-->";
+      var socket = null;
+
+      window.onload = function () {
+         if( typeof(WebSocket) != "function" ){
+            setNoWebSocketSupport();
+            return;
+         }
+      }
+
+      function ConnectWebSocket() {
+         try {
+            socket = new WebSocket(url);
+
+            setServerStatus( 'Closed' );
+            setServerError( '' );
+
+            socket.onopen = function (openEvent) {
+               setServerStatus( 'Open' );
+               setServerError( '' );
+               SetButtonConnected( true );
+               sendTextCommand('current');
+            };
+
+            socket.onclose = function (closeEvent) {
+               setServerStatus( 'Closed' );
+               SetButtonConnected( false );
+            };
+
+            socket.onmessage = function (messageEvent) {
+               if (messageEvent.data instanceof Blob) {
+                  var image = document.getElementById('image');
+                  image.src = window.URL.createObjectURL(messageEvent.data);
+               }else{
+                  setServerResponse( messageEvent.data );
+               }
+            };
+
+            socket.onerror = function (errorEvent) {
+               SetButtonConnected( false );
+               if( errorEvent.data == undefined ) return;
+               setServerError( errorEvent.data );
+            };
+
+         }
+         catch (exception) {
+            setServerError( 'Exception occurred' );
+            SetButtonConnected( false );
+         }
+      }
+      function DisconnectWebSocket() {
+         if (socket == undefined) return;
+         socket.close();
+         socket = null;
+      }
+      function sendTextCommand( textCommand ){
+         if( socket == undefined ) return;
+         if (socket.readyState != WebSocket.OPEN) return;
+         socket.send( textCommand );
+      }
+      function setInnerHtmlById( idElement, text ){
+         document.getElementById(idElement).innerHTML = text;
+      }
+      function setDisabledById( idElement, isDisabled ){
+         document.getElementById(idElement).disabled = isDisabled;
+      }
+      function setNoWebSocketSupport(){
+         var cMsg
+         cMsg =  "<h1>Error</h1> Your browser does not support websockets.";
+         document.getElementById("body").innerHTML = cMsg;
+      }
+      function setServerStatus( text )   { setInnerHtmlById( "serverStatus",   text ) }
+      function setServerResponse( text ) { setInnerHtmlById( "serverResponse", text ) }
+      function setServerError( text ){
+         if( text != '' ){
+            text = 'Error: (' + text + ')';
+         }
+         setInnerHtmlById( "serverError", text )
+      }
+      function SetButtonConnected( isConnected ){
+         setDisabledById( 'idBtnConnect',      isConnected );
+         setDisabledById( 'idBtnDisconnect', ! isConnected );
+         setDisabledById( 'idBtnPrev',       ! isConnected );
+         setDisabledById( 'idBtnNext',       ! isConnected );
+      }
+      function Initialize() {
+         ConnectWebSocket();
+         //SetButtonConnected( true );
+      }
+      function Deinitialize() {
+         DisconnectWebSocket();
+         //SetButtonConnected( false );
+      }
+   </script>
+</head>
+<body id="body">
+    <div>
+        Status: (<span id="serverStatus"></span>)
+        <span id="serverError"></span>
+        <div id="serverResponse"></div>
+
+        <button id="idBtnConnect"    onclick="window.Initialize();return true;">Connect</button>
+        <button id="idBtnDisconnect" disabled="disabled" onclick="window.Deinitialize();return true;">Disconnect</button>
+        <button id="idBtnPrev"       disabled="disabled" onclick="sendTextCommand('prev');return true;">Prev</button>
+        <button id="idBtnNext"       disabled="disabled" onclick="sendTextCommand('next');return true;">Next</button><br/>
+
+        <p>
+        <img id="image"  />
+        </p>
+
+    </div>
+</body>
+</html>

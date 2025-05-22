@@ -1,0 +1,15 @@
+LCID=0x409 0x0 0x0 ;Englisch (USA)
+REPORT=Yes
+FTS=1
+CNT=.\sdidemo.cnt
+BMROOT=.\
+HLP=.\sdidemoe.hlp
+
+[FILES]
+.\sdidemo.rtf
+
+[WINDOWS]
+Main="",(473,18,530,961),60672,,(r12632256)
+
+[CONFIG]
+BrowseButtons()

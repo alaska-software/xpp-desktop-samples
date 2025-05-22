@@ -1,0 +1,17 @@
+//////////////////////////////////////////////////////////////////////
+//
+//  CRYPTBUF.ARC
+//
+//  Copyright:
+//           Alaska Software, (c) 1997-2025. All rights reserved.         
+//  
+//  Contents:
+//           Defines several resources
+//////////////////////////////////////////////////////////////////////
+
+
+ICON
+        1 = "crypt.ico"
+
+BITMAP
+        2 = "copyarr.bmp"

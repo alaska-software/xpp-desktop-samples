@@ -1,0 +1,121 @@
+<!--
+//////////////////////////////////////////////////////////////////////
+//
+//  SLIDINGLIST.HTM
+//
+//  Copyright:
+//        Alaska Software, (c) 2015-2025. All rights reserved.         
+//  
+//  Contents:
+//   Basic HTML markup and CSS stylesheet for creating the
+//   representation of the control. Note that the HTML code for
+//   the items in the control is inserted dynamically at runtime,
+//   see the "ITEMLIST" placeholder!
+//      
+//   IMPORTANT: Some aspects in the following code are
+//   proprietary to the HTML/CSS rendering component used in the 
+//   XbpHTMLWindow class (HTMLayout)! An example is the way 
+//   behaviors are assigned to certain HTML elements. Future 
+//   versions of Xbase++ are likely to use different concepts to 
+//   achieve similar functionality!
+//   
+//////////////////////////////////////////////////////////////////////
+-->
+
+<html>
+  <head>
+  <style type="text/css">
+        body {
+          font-family:"Century Gothic","Tahoma";
+          font-size:10pt;
+          padding: 10px;
+          width:100%%; height:100%%;
+          background-color: #e9e8f3;
+        }
+
+        .thelist
+        {
+          overflow:auto;
+          height:100%%;
+          width:100%%;
+          margin:0;
+          border:1px solid #bdbccc;
+          padding:2px;
+          // Have XbpHTMLWindow object load the
+          // background image from the application's 
+          // resource
+          background-image:url("res://application/png/neutral/bgimage");
+          background-repeat:no-repeat;
+          background-position:90% 95%;
+          background-color: #fff;
+          overflow:auto;
+        }
+
+        // Make list element expandable/collapsible
+        // (HTMLayout proprietary!)
+        #expandable { behavior:expandable-list; }
+        #collapsible { behavior:collapsible-list; }
+
+        .thelist > li
+        {
+           color:black;
+           padding: 4px;
+           // Activate slide effect for list
+           // list transitions
+           // (HTMLayout proprietary!)
+           transition:slide; 
+        }
+
+        .thelist > li > .caption
+        {
+          padding-left:4px;
+        }
+
+        .thelist > li > .caption:hover
+        {
+           // Activate blend effect for 
+           // visualizing items the mouse
+           // pointer is placed over
+           // (HTMLayout proprietary!)
+          transition:blend;
+          background-color: #e9e8f3;
+        }
+
+        .thelist > li:current > .caption
+        {
+          background-color: #bdbccc;
+        }
+
+        .thelist > li > .details
+        {
+          visibility:collapse;       
+          background-color: #e9e8f3 #bdbccc #bdbccc #e9e8f3;
+          border:1px solid #bdbccc;
+          padding-top:4px;
+          padding-bottom:4px;
+          font-size:80%;
+        }
+
+        .details td:nth-child(1) 
+        {
+                width:60px;
+        }
+        .details td:nth-child(2) 
+        {
+                color:#777687;
+                width:90px;
+        }
+
+        .thelist > li:expanded > .details
+        {
+          visibility:visible;  
+        }
+  </style>
+</head>
+
+<body>
+     <ul class="thelist" id="expandable">
+       %ITEMLIST%
+     </ul>
+</body>
+</html>

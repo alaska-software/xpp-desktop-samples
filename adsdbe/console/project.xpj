@@ -1,0 +1,62 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    ADSMGMT.EXE
+
+[ADSMGMT.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    adsmgmt.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    gra.ch
+    xbp.ch
+    common.ch
+    appevent.ch
+    font.ch
+    adsmg.ch
+    std.ch
+    ADSMGMT.res
+    ACTIVITY.obj
+    ADSMGFRM.obj
+    ADSMGMT.obj
+    ALERTBOX.obj
+    ANIMATE.obj
+    BMPREF.obj
+    COMMSTAT.obj
+    KILLUSER.obj
+    SERVERS.obj
+    THREADS.obj
+    XBPFUNCS.obj
+// $STOP-AUTODEPEND
+    ADSMG.LIB
+    ADSMGMT.ARC
+    ACTIVITY.PRG
+    ADSMGFRM.PRG
+    ADSMGMT.PRG
+    ALERTBOX.PRG
+    ANIMATE.PRG
+    BMPREF.PRG
+    COMMSTAT.PRG
+    KILLUSER.PRG
+    SERVERS.PRG
+    THREADS.PRG
+    XBPFUNCS.PRG
+

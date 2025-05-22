@@ -1,0 +1,16 @@
+:Base rtfdemoe.hlp > main
+:Title RTF Help Demo
+1 RTF Basics
+2 What is RTF ?=HLP100
+2 Characteristics=HLP200
+2 Document definitions=HLP300
+1 Formatting
+2 Characters=HLP400
+2 Paragraph=HLP500
+2 Page=HLP600
+2 \footnote=HLP700
+1 Links
+2 Hypertext Links=HLP800
+1 Xbase Parts
+2 Combobox=HLP900
+2 XbpMLE=HLP1000

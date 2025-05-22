@@ -1,0 +1,90 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    trace.exe
+    traceclient.exe
+
+[trace.exe]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = 
+    RC_COMPILE    = ARC
+    RC_FLAGS      =
+    OBJ_DIR       = objdir
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    gra.ch
+    common.ch
+    font.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    std.ch
+    xbp.ch
+    set.ch
+    appevent.ch
+    natmsg.ch
+    _application.obj
+    _dataentry.obj
+    application.obj
+    dataentry.obj
+    main.obj
+    wstrace.obj
+// $STOP-AUTODEPEND
+    application.xff
+    dataentry.xff
+    _application.prg
+    _dataentry.prg
+    application.prg
+    dataentry.prg
+    main.prg
+    wstrace.prg
+
+[traceclient.exe]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = ALINK
+    LINK_FLAGS    = 
+    RC_COMPILE    = ARC
+    RC_FLAGS      =
+    RunParameter = 
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    sql.ch
+    xbp.ch
+    appevent.ch
+    font.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    std.ch
+    gra.ch
+    set.ch
+    common.ch
+    natmsg.ch
+    get.ch
+    _wstraceclientdialog.obj
+    messagethread.obj
+    traceclientmain.obj
+    wstraceclient.obj
+    wstraceclientdialog.obj
+// $STOP-AUTODEPEND
+    wstraceclientdialog.xff
+    _wstraceclientdialog.prg
+    messagethread.prg
+    traceclientmain.prg
+    wstraceclient.prg
+    wstraceclientdialog.prg
+

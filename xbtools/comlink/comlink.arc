@@ -1,0 +1,19 @@
+//////////////////////////////////////////////////////////////////////
+//
+//  COMLINK.ARC
+//
+//  Copyright:
+//      Alaska Software, (c) 1997-2025. All rights reserved.         
+//  
+//  Contents:
+//      MODEMINFO resource file
+//////////////////////////////////////////////////////////////////////
+
+
+#include "transmit.ch"
+
+ICON    
+        ID_APPNAME    = "COMLINK.ICO"
+
+/* EOF */
+

@@ -1,0 +1,41 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    SCDEMO.EXE
+
+[SCDEMO.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    font.ch
+    sql.ch
+    xbp.ch
+    appevent.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    set.ch
+    gra.ch
+    natmsg.ch
+    common.ch
+    get.ch
+    std.ch
+    _SCDEMO.obj
+    SCDEMO.obj
+    SCMANAGE.obj
+// $STOP-AUTODEPEND
+    _SCDEMO.PRG
+    SCDEMO.PRG
+    SCMANAGE.PRG
+

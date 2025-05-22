@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+
+<config>
+
+<database_engines>
+  <dbebuild name="DBFNTX">
+     <storage name="DBFDBE"/>
+     <order   name="NTXDBE"/>
+  </dbebuild>
+  <dbebuild name="DBFCDX">
+     <storage name="DBFDBE"/>
+     <order   name="CDXDBE"/>
+  </dbebuild>
+  <dbebuild name="FOXCDX">
+     <storage name="FOXDBE"/>
+     <order   name="CDXDBE"/>
+  </dbebuild>
+  <dbeload name="pgdbe"/>
+</database_engines>
+
+<connection name="test"
+            dbe="pgdbe"
+            srv="localhost"
+            uid="postgres"
+            pwd="postgres"
+            database="mdidemo"/>
+
+<!-- data\customer files -->
+
+<table name = "customer"
+       dbe  = "dbfntx"
+       dbf  = "..\..\data\misc\customer.dbf">
+       <order>..\..\data\misc\custa.ntx</order>
+       <order>..\..\data\misc\custb.ntx</order>
+</table>
+
+<table name = "parts"
+       dbe  = "foxcdx"
+       dbf  = "..\..\data\misc\parts.dbf">
+       <order>..\..\data\misc\parts.cdx</order>
+</table>
+
+<upsize table="customer" connection="test" mode="isam">
+  <deferred>
+    <!-- add a full text search column, based on given fields of the isam table -->
+    <add column="fts_col" type="fts" binding="lastname,firstname,city,notes" language="en"/>
+  </deferred>
+
+</upsize>
+
+
+<upsize table="parts" connection="test" mode="isam"/>
+
+</config>

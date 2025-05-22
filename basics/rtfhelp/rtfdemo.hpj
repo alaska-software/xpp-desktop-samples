@@ -1,0 +1,36 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+
+[OPTIONS]
+HCW=0
+COMPRESS=12 Hall Zeck
+LCID=0x409 0x0 0x0 ;Englisch (USA)
+REPORT=Yes
+FTS=1
+CNT=.\rtfdemo.cnt
+BMROOT=.\
+HLP=.\rtfdemoe.hlp
+
+[FILES]
+.\rtfbasic.rtf
+.\rtftoken.rtf
+.\rtfdemo.rtf
+
+[MAP]
+HLP100    100
+HLP200    200
+HLP300    300
+HLP400    400
+HLP500    500
+HLP600    600
+HLP700    700
+HLP800    800
+HLP900    900
+HLP1000   1000
+
+
+[WINDOWS]
+Main="",(473,18,530,961),60672,,(r12632256)
+
+[CONFIG]
+BrowseButtons()

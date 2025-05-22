@@ -1,0 +1,40 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    ABOUTBOX.EXE
+
+[ABOUTBOX.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = -q
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    gra.ch
+    xbp.ch
+    aboutbox.ch
+    common.ch
+    font.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    natmsg.ch
+    appevent.ch
+    get.ch
+    std.ch
+    prompt.ch
+    set.ch
+    ABOUTBOX.res
+    ABOUTBOX.obj
+// $STOP-AUTODEPEND
+    ABOUTBOX.ARC
+    ABOUTBOX.PRG
+

@@ -1,0 +1,3 @@
+iif(file("readme.htm"),XWBDisplayHTML("Sample SqlBrowse",memoread("readme.htm")),nil)
+
+

@@ -1,0 +1,36 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    KEYBOARD.EXE
+
+[KEYBOARD.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q
+    DEBUG_SAVE    = yes
+    GUI           = no
+    LINKER        = alink
+    LINK_FLAGS    = /ST:100000
+    RC_COMPILE    = arc
+    RC_FLAGS      = 
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    COLLAT.CH
+    FILEIO.CH
+    GET.CH
+    INKEY.CH
+    MEMVAR.CH
+    NATMSG.CH
+    PROMPT.CH
+    SET.CH
+    STD.CH
+    XBTSCAN.CH
+    KBD_REC.obj
+// $STOP-AUTODEPEND
+    XBTBASE1.LIB
+    XBTBASE2.LIB
+    KBD_REC.PRG
+

@@ -1,0 +1,40 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    olimport.exe
+
+[olimport.exe]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    memvar.ch
+    sql.ch
+    appevent.ch
+    outlook.ch
+    prompt.ch
+    std.ch
+    collat.ch
+    set.ch
+    common.ch
+    natmsg.ch
+    xbp.ch
+    get.ch
+    contactdialog.obj
+    contactnavigator.obj
+    main.obj
+// $STOP-AUTODEPEND
+    contactdialog.prg
+    contactnavigator.prg
+    main.prg
+

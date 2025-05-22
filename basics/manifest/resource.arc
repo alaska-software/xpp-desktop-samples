@@ -1,0 +1,5 @@
+#define MANIFEST_RESID 1
+#define MANIFEST 24
+
+USERDEF MANIFEST
+  MANIFEST_RESID = FILE "extfile.exe.manifest"

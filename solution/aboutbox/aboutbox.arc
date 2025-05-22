@@ -1,0 +1,16 @@
+//////////////////////////////////////////////////////////////////////
+//
+//  ABOUTBOX.ARC
+//
+//  Copyright:
+//      Alaska Software, (c) 1997-2025. All rights reserved.         
+//  
+//  Contents:
+//      Resource definition for Aboutbox.exe   
+//////////////////////////////////////////////////////////////////////
+
+
+
+#include "Aboutbox.ch"
+
+BITMAP  ID_ABOUT_BITMAP  =  "Xbpp.bmp"

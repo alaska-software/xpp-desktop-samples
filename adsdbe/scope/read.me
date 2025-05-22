@@ -1,0 +1,204 @@
+//////////////////////////////////////////////////////////////////////
+//
+//  READ.ME
+//
+//  Copyright:
+//   Alaska Software, (c) 1999. All rights reserved
+//  
+//  Contents:
+//   Description of scope functions and commands implemented
+//   in ADSEXT.CH and ADSEXT.PRG
+//   
+//////////////////////////////////////////////////////////////////////
+
+
+1. Overview
+------------
+
+The examples in this directory demonstrate how to use the functionality of
+the ADS client API from Xbase++'s Dll interface. ADSEXT.CH contains defines
+for easy usage of the ADS scope functionality while ADSEXT.PRG implements
+Xbase++ wrapper functions for the ADS client API. A usage example is provided
+with SCOPE.PRG. The complete description of the commands and functions is
+given below:
+
+IMPORTANT: Since Xbase++ 1.7 Scopes, selective relations and other set oriented
+navigational functionality was added. We encourage you to use Xbase++ native
+Scope functionality and _not_ the scope wrappers as provided in this sample.
+The functionality provided in this sample is for illustrational purpose only.
+For more details about native Xbase++ scopes please check your online 
+documentation search for DbScope(), DbSetScope() and DbClearScope().
+
+2. Function reference
+----------------------------------
+
+FUNCTION:
+   AX_ClrScope()
+   
+   Clear one or both scope values.
+
+SYNTAX:
+   AX_ClrScope( [<nScopeType>] ) -> lSuccess
+
+PARAMETERS:
+   <nScopeType>
+   This is an optional numeric value that decides which scope value is to 
+   be cleared.
+   <nScopeType> may have one of the following values:
+
+   ADS_SCOPE_TOP    - clears the value for the TOP scope.
+   ADS_SCOPE_BOTTOM - clears the value for the BOTTOM scope.
+   ADS_SCOPE_BOTH   - clears both scope values.
+
+RETURN:
+   The function returns a logical value when the chosen scope value is
+   cleared. The return value .T. indicates a succesful clearing of the
+   value, .F. indicates a failure of the operation.
+
+DESCRIPTION:
+   This function clears one or both defined scope values for the current
+   tag or index. A scope is used to mark the top or bottom range of an 
+   index.
+
+   If only one of the scope values for the current index is cleared, the 
+   new boundary will either be set to the top (if the TOP scope value is 
+   cleared) or the bottom (if BOTTOM scope value is cleared) of the actual 
+   index.
+
+EXAMPLE:
+   #include "ads.ch"
+   #include "adsext.ch"
+
+
+   // Install ADSDBE as default database engine.
+   PROCEDURE DbeSys
+      IF !DbeLoad( "ADSDBE" )
+         Alert( "ADSDBE could not be installed!" )
+      ENDIF
+      DbeSetDefault( "ADSDBE" )
+   RETURN
+
+
+   PROCEDURE Main
+      // Connect to database server.
+      LOCAL oSession := DacSession():New( "ADSDBE", "F:" )
+
+      IF !oSession:isconnected()
+         Alert( "Connection to server could not be established!" )
+      ENDIF
+
+      USE TEST NEW          
+      SET INDEX TO NAME
+
+      // Set a scope condition:
+      AX_SetScope( ADS_SCOPE_TOP   , "ARAGORN" )
+      AX_SetScope( ADS_SCOPE_BOTTOM, "GANDALF" )
+
+      Browse()   // Only persons with names from "Aragorn" to "Gandalf"
+                 // will be displayed.
+
+      // Clear the scope condition:
+      AX_ClrScope( ADS_SCOPE_BOTH )
+
+      // Close databases and disconnect from server.
+      DbCloseAll()
+      oSession:disconnect()
+   RETURN
+
+
+
+============================================================================
+
+FUNCTION:
+   AX_SetScope()
+   
+   Query or set scope values.
+
+SYNTAX:
+   AX_SetScope( [<nScopeType>], [<xValue>] ) -> lSuccess
+
+
+PARAMETERS:
+   <nScopeType>
+   This optional parameter determines which scope value is to be set. The 
+   value may be ADS_SCOPE_TOP or ADS_SCOPE_BOTTOM.
+
+   <xValue>
+   If this optional parameter is used, the chosen scope value is set to the 
+   value of this parameter. Note that the data type of the new value must 
+   match the data type of the according index key.
+
+RETURN:
+   If <xValue> is not set, the value of the current scope value is returned. 
+   In the other case, the value of the former scope setting is returned.
+
+DESCRIPTION:
+   The function AX_SetScope() is used to set or query the scope settings. 
+   When it is called without the xValue parameter, it simply returns the 
+   current scope setting without modifying it. However, if the <xValue> 
+   parameter is given, the actual scope setting is modified and the old 
+   setting is returned by the function.
+
+   A scope is used to limit the navigation within the current index to the 
+   range specified by the scope settings. This is the difference between a 
+   FILTER and a SCOPE: A scope works only on the active index, a filter 
+   works on the database file itself (what in fact makes it very slow 
+   compared to a scope, because a filter expression must evaluate all 
+   records of a database file).
+
+   Assume a customer database indexed on the names of the customers. Then
+   imagine the following scope settings: 
+      AX_SetScope( ADS_SCOPE_TOP, "BALIN" ), AX_SCOPE_BOTTOM, "FRODO" ). 
+
+   A Browse() on this database will not display the customers "ARAGORN" 
+   or "GANDALF", because they are "out of scope". However, scopes are only 
+   of logical nature, what in fact allows a GOTO to a record outside the 
+   borders of the scope. A DbGoTop() or DbGoBottom(), however, navigates 
+   to the TOP or BOTTOM of the set scope. A DbSkip() or DbSeek() operation 
+   also navigates only within the range of the current scope. Note that 
+   when navigating within a descending index, the SCOPETOP key
+   value is greater than the SCOPEBOTTOM value.
+
+   A scope is active as long as it is not cleared with the AX_ClrScope()
+   function or as long as the corresponding index file is open.
+
+EXAMPLE:
+   #include "ads.ch"
+   #include "adsext.ch"
+
+   // Install ADSDBE as default database engine.
+   PROCEDURE DbeSys
+      IF !DbeLoad( "ADSDBE" )
+         Alert( "ADSDBE could not be installed!" )
+      ENDIF
+      DbeSetDefault( "ADSDBE" )
+   RETURN
+
+
+   PROCEDURE Main
+      // Connect to database server.
+      LOCAL oSession := DacSession():New( "ADSDBE", "F:" )
+
+      IF !oSession:isconnected()
+         Alert( "Connection to server could not be established!" )
+      ENDIF
+
+      USE TEST NEW          
+      SET INDEX TO NAME
+
+      // Set a scope condition:
+      AX_SetScope( ADS_SCOPE_TOP, "ARAGORN" )
+      AX_SetScope( ADS_SCOPE_BOTTOM, "GANDALF" )
+
+      Browse()   // Only persons with names from "Aragorn" to "Gandalf"
+                 // will be displayed.
+
+      // Clear the scope condition:
+      AX_ClrScope( ADS_SCOPE_BOTH )
+
+
+      // Close databases and disconnect from server.
+      DbCloseAll()
+      oSession:disconnect()
+   RETURN
+

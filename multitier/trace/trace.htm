@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebSocketServer Client</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <style>
+        body {
+            font-family: Helvetica, Arial, Verdana, sans-serif;
+            margin: 2px;
+            padding: 0;
+        }
+        p {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: #DDDDDD;
+            font-size: 11px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        </style>
+    </head>
+    <body id="body">
+        <script type="text/javascript">
+            var socket;
+
+            window.onload = function () {
+               if( typeof(WebSocket) != "function" ){
+                  setNoWebSocketSupport();
+                  return;
+               }
+            }
+
+            function TryConnect(address) {
+                console.log("Initializing: " + address);
+
+                socket = new WebSocket(address);
+                socket.onopen = function (event) {
+                    console.log("Socket connected");
+                    document.getElementById("buttonConnect").disabled = true;
+                    document.getElementById("buttonStop").disabled = false;
+
+                    setState( "Connected" )
+                };
+                socket.onclose = function(event) {
+                    console.log("Socket closed.");
+                    document.getElementById("buttonConnect").disabled = false;
+                    document.getElementById("buttonStop").disabled = true;
+                };
+                socket.onerror = function (event) {
+                    console.log("Socket error: " + event.data);
+                };
+                socket.onmessage = function (event) {
+                    if (event.data instanceof Blob) return;
+                    setMessage(event.data);
+                };
+            }
+            function Disconnect() {
+                if (socket !== undefined) {
+                    console.log("Disconnect socket");
+                    socket.close();
+                    setState( "Disconnected" );
+                }
+            }
+
+            function setState( state ){
+               var message = document.getElementById("idState");
+               message.innerHTML = state;
+            }
+            function setMessage( string ){
+               var p = document.createElement("p");
+               p.appendChild(document.createTextNode(string));
+               document.getElementById("idMessage").appendChild(p);
+            }
+            function setError( errormsg ){
+               var error = document.getElementById("idError");
+               error.innerHTML = errormsg;
+            }
+            function setNoWebSocketSupport(){
+               var cMsg
+               cMsg =  "<h1>Error</h1> Your browser does not support websockets.";
+               document.getElementById("body").innerHTML = cMsg;
+            }
+        </script>
+
+        <p>
+            <input type="button" id="buttonConnect" value="Connect"
+                onclick="TryConnect('ws://<!--[COMPUTERNAME]-->:<!--[PORT]-->/<!--[CLASS]-->');" />
+            <input type="button" id="buttonStop" disabled
+                onclick="Disconnect();" value="Disconnect" />
+            <span id="idState">Disconnected</span>
+        </p>
+        <div id="idError"></div>
+        <div id="idMessage"></div>
+    </body>
+</html>

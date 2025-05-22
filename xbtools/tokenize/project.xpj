@@ -1,0 +1,58 @@
+[PROJECT]
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    CHECKPPO.EXE
+    OSENV.EXE
+
+[CHECKPPO.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q
+    DEBUG         = yes
+    GUI           = no
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      = 
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    CHECKPPO.obj
+// $STOP-AUTODEPEND
+    XBTBASE1.LIB
+    CHECKPPO.PRG
+
+[OSENV.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q
+    DEBUG         = yes
+    GUI           = no
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      = 
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    OSENV.obj
+// $STOP-AUTODEPEND
+    XBTBASE1.LIB
+    OSENV.PRG
+

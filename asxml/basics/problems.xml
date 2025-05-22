@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE problems SYSTEM "problems.dtd">
+<problems>
+<![CDATA[
+Hello, welcome to our little problems data base.
+]]>
+
+<!-- START OF EDITABLE SECTION!-->
+
+<report id="0001-4" user="Bill" state="CLOSED">
+<topic>  Window open after lunch
+</topic>
+<quest>  Why was the window open after I came back from lunch?
+</quest>
+<answer> The answer is blown in the wind.
+</answer>
+<file>	 marlene.dit
+</file>
+<related id="" />
+<followup id="" />
+</report>
+
+<report id="0001-5" user="Jane" state="OPEN">
+<topic> Could not open water bottle using 2 fingers
+</topic>
+<quest> I tried to open my water bottle using 2 fingers
+        but failed. If anybody knows the trick let me know.
+</quest>
+<answer>  
+</answer>
+<file>	 not filed
+</file>
+<related id="" />
+<followup id="" />
+</report>
+
+<report id="0001-6" user="Tim" state="CLOSED">
+<topic> How to open a water bottle using one finger only
+</topic>
+<quest> How do I open a water bottle using one finger only?
+</quest>
+<answer>Buy an opener.
+</answer>
+<file>	
+</file>
+<related id="" />
+<followup id="0001-5" />
+</report>
+
+</problems>

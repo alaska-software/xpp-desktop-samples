@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.00">
+<title>Function AAdd</title>
+</HEAD>
+<BODY>
+<a href=#top></a>
+<dl>
+<dt><h2>FUNCTION Aadd()</h2></dt>
+<dd>Enlarges an array by one element </dd>
+<dt><dd><a href="#example">Example</a>
+<hr width="90%" align="left">
+
+<dt><a name="syntax"><b>SYNTAX</b></a></dt>
+<dd><pre>Aadd( &lt;aArray&gt;, &lt;Expression&gt;, [&lt;nElement&gt;]) --> xValue</pre></dd>
+
+<dt><b>PARAMETERS</b></dt><a name="params"></a>
+<dl>
+<dt><pre>&lt;aArray&gt;</pre></dt>
+<dd><i>&lt;aArray&gt;</i> is the array to which a new element is added. </dd> 
+
+<dt><pre>&lt;Expression&gt;</pre></dt>
+<dd><i>&lt;Expression&gt;</i> determines the value assigned to the new element. <i>&lt;Expression&gt;</i> can be a constant, a variable, or a function call. The argument <i>&lt;Expression&gt;</i> is not optional. <i>&lt;Expression&gt;</i> may have any data type. </dd>
+
+<dt><pre>&lt;nElement&gt;</pre></dt>
+<dd>The optional argument <i>&lt;nElement&gt;</i> specifies the position within the array of the element to which the new value is assigned. If <i>&lt;nElement&gt;</i> is not specified, the value is assigned to the last element. </dd>
+<p></p></dl>
+
+<dt><b>RETURN</b></dt>
+<dd><p>The return value of AAdd() is the value of <i>&lt;Expression&gt;</i>.</p></dd>
+
+<dt><b>DESCRIPTION</b></dt><a name="descr"></a>
+<dd><p> The array function AAdd() adds one element to an existing array. The new element is the last element in the array or the element at the position <i>&lt;nElement&gt;</i>. The new element has the value associated with <i>&lt;Expression&gt;</i>. The length of the array is not limited in Xbase++.
+</p>
+
+<p>When the value of <i>&lt;Expression&gt;</i> is an array, the new element in <i>&lt;aArray&gt;</i> contains a reference to the array specified in <i>&lt;Expression&gt;</i>. <i>&lt;aArray&gt;</i> then becomes a multidimensional array.
+</p>
+</dd>
+
+<a name="example"></a>
+<dt><b>EXAMPLE</b>  (<a href=#top>To the beginning</a>)</dt>
+<dd><xmp>
+// The example demonstrates the use of AAdd() with various
+// data types. In the first series, elements are added at the end
+// of the array, in the second elements are inserted into the
+// array.
+
+   PROCEDURE Main
+      LOCAL aArray := {}           // aArray is an empty array
+
+      AAdd( aArray, .T.)           // aArray is {.T.}
+      AAdd( aArray, "A")           // aArray is {.T., "A"}
+      AAdd( aArray, Asc("A") )     // aArray is {.T., "A", 65}
+      AAdd( aArray, NIL )          // aArray is {.T., "A", 65, NIL}
+      AAdd( aArray, {"NAME","C",20,0} )
+                          // aArray is
+                          // {.T., "A", 65, NIL, {"NAME","C",20,0} }
+
+      aArray := {}
+
+      AAdd( aArray, .T.)           // aArray is {.T.}
+      AAdd( aArray, "A",1 )        // aArray is {"A",.T.}
+      AAdd( aArray, Asc("A"), 2 )  // aArray is {"A", 65,.T.}
+
+   RETURN
+</xmp>
+</dl>
+</BODY>
+</HTML>

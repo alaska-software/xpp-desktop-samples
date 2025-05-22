@@ -1,0 +1,100 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Sample Readme</title>
+</head>
+<style>
+h1{
+  width:100%;
+  background-color: #298BF0;
+  color: #f7f7ff;
+  padding: 3px;
+  margin-top:0px;
+  padding-top:0px;
+  margin-bottom:10px;
+  font-size:24pt;
+}
+h2{
+  color: #298BF0;
+  font-size:14pt;
+  margin-bottom:0px;  
+}
+h2 + p{
+  margin-top:5px;
+  font-size:10pt;       
+}
+
+
+h3{
+  color: #ff9720;
+  font-size:10pt;
+  margin-top:0px;  
+  margin-bottom:0px;  
+  width:10%;
+}
+h3 + p{
+  margin-top:0px;
+  margin-bottom:5px;
+  font-size:10pt;
+  width:70%;    
+}
+</style>
+<body bgcolor="#FFFFFF" style="font-family: Verdana, Arial, Helvetica, sans-serif;font-size:10pt;">
+
+<h1>Sample: XbpHTMLStyle</h1>
+
+<h2>Summary:</h2>
+<p>This example program demonstrates using the XbpHTMLStyle class
+for styling a combo box with HTML/CSS-based content. To do this,
+images and text are first read in from a table and then formatted
+and displayed in the items of the combo box using HTML and CSS.</p>
+
+<h2>Files:</h2>
+<ul>
+<li><b>main.prg: </b>Entry point of the application. Create the main form and opens required tables.</li>
+<li><b>styledcombo.prg: </b>Creates a combo box styled with HTML/CSS illustrating only the basic concepts.</li>
+<li><b>styledcomboclass.prg: </b>Creates a combo box styled with HTML/CSS illustrating advanced concepts and features.</li>
+</ul>
+
+<h2>Description:</h2>
+
+<p>The example is split into two separate executables (targets):</p>
+
+<ul>
+<li><b>styledcombo.exe:</b> This example program illustrates the basic concepts of
+using the WebUI for styling an Xbase Part with HTML and CSS. The example contains 
+just the essentials; no abstraction has been added for making the combo box 
+available as a stand-alone Xbase Part.</li>
+
+<li><b>styledcomboclass.exe:</b> This example program implements the same
+styled combo box as the first example, but using some advanced features. For 
+example, whereas string manipulation functions were used previously for 
+creating the HTML and style sheet (CSS), a generic text container class is used
+here to accomplish this task. Also, the resources of the images in the combo box items
+are loaded dynamically instead of being statically encoded in 
+the HTML markup. This boosts performance and also adds flexibility. Finally, the 
+example demonstrates how the new functionality may be encapsulated in a stand-alone 
+Xbase Part class.</li>
+</ul>
+
+<p>The example as a whole shows the following concepts:</p>
+<ul>
+<li>Using the XbpHTMLStyle class in conjunction with the owner-drawing feature</li>
+<li>Embedding images into the HTML markup and loading images dynamically at runtime</li>
+<li>Encapsulating the data (HTML) and the stylesheet (CSS) in a custom Xbase Part class</li>
+<li>Enhancing the XbpComboBox class so that it uses a dedicated item class for managing items</li>
+</ul>
+
+<h2>Requirements:</h2>
+<ul>
+<li>Xbase++ 2.00.769 or higher.</li>
+</ul>
+
+<h3>Keywords:</h3><p>WebUI, XbpComboBox, HTML/CSS, WUITextContainer, XbpHTMLStyle, Owner-Drawing</p>
+<h3>Author:</h3><p>Alaska Software</p>
+
+
+
+</body>
+<html>

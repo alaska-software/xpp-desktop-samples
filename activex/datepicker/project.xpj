@@ -1,0 +1,25 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    DATEPICK.EXE
+
+[DATEPICK.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q /wi /wl /w /wu
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    _dateform.obj
+    dateform.obj
+// $STOP-AUTODEPEND
+    _dateform.prg
+    dateform.prg

@@ -1,0 +1,97 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    DBBROWSE.EXE
+    EBROWSE.EXE
+    FBROWSE.EXE
+
+[DBBROWSE.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = -q -rxppui2.lib
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    appevent.ch
+    common.ch
+    font.ch
+    DBBROWSE.obj
+// $STOP-AUTODEPEND
+    DBBROWSE.PRG
+
+[EBROWSE.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = -q -rxppui2.lib
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    appevent.ch
+    collat.ch
+    gra.ch
+    common.ch
+    prompt.ch
+    memvar.ch
+    set.ch
+    sql.ch
+    natmsg.ch
+    xbp.ch
+    get.ch
+    std.ch
+    _EBROWSE.obj
+    EBROWSE.obj
+// $STOP-AUTODEPEND
+    _EBROWSE.PRG
+    EBROWSE.PRG
+
+[FBROWSE.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = -q -rxppui2.lib
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    std.ch
+    set.ch
+    natmsg.ch
+    get.ch
+    prompt.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    appevent.ch
+    common.ch
+    gra.ch
+    xbp.ch
+    font.ch
+    directry.ch
+    FBROWSE.obj
+// $STOP-AUTODEPEND
+    FBROWSE.PRG
+

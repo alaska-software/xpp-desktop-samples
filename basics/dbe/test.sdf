@@ -1,0 +1,14 @@
+[INFO]
+file=TEST.TXT
+fieldcount=6
+recsize=73
+reccount=7
+
+[FIELDS]
+NR=N,5,0
+NAME1=C,20,0
+NAME2=C,20,0
+BALANCED=L,1,0
+AMOUNT=N,5,2
+CITY=C,20,0
+[END]

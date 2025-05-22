@@ -1,0 +1,29 @@
+<!-- 
+     problems DTD 
+-->
+
+<!-- A problem list has many problem descriptions -->
+<!ELEMENT problems (report)+ >
+
+<!-- structure of the problem report -->
+<!ELEMENT report (topic, quest, answer, file*, related*, followup*  ) >
+<!ATTLIST report
+          id    CDATA #REQUIRED
+          user  CDATA #REQUIRED
+          state (open|closed) "open" >
+
+<!ELEMENT topic (#PCDATA)>
+
+<!ELEMENT quest (#PCDATA)>
+
+<!ELEMENT answer (#PCDATA)*>
+
+<!ELEMENT file (#PCDATA)>
+
+<!ELEMENT related (#PCDATA)*>
+<!ATTLIST related
+          id    CDATA #REQUIRED>          
+
+<!ELEMENT followup (#PCDATA)*>
+<!ATTLIST followup
+          id    CDATA #REQUIRED>          

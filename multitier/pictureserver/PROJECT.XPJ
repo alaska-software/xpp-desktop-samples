@@ -1,0 +1,50 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    pictureserver.exe
+
+[pictureserver.exe]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    OBJ_DIR       = objdir
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    assert.ch
+    gra.ch
+    common.ch
+    font.ch
+    fileio.ch
+    memvar.ch
+    collat.ch
+    sql.ch
+    set.ch
+    xbp.ch
+    natmsg.ch
+    appevent.ch
+    get.ch
+    directry.ch
+    prompt.ch
+    std.ch
+    _pictureserverui.obj
+    pictureserver.obj
+    pictureserverui.obj
+    websocketpictureserver.obj
+// $STOP-AUTODEPEND
+    pictureserver.xff
+    readme.txt
+    websocketpictureserver.htm
+    _pictureserverui.prg
+    pictureserver.prg
+    pictureserverui.prg
+    websocketpictureserver.prg
+

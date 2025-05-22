@@ -1,0 +1,38 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    CHART.exe
+
+[CHART.exe]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    xbp.ch
+    collat.ch
+    owcchart.ch
+    appevent.ch
+    prompt.ch
+    memvar.ch
+    set.ch
+    sql.ch
+    natmsg.ch
+    activex.ch
+    get.ch
+    std.ch
+    chart.obj
+    chartclasses.obj
+// $STOP-AUTODEPEND
+    chart.prg
+    chartclasses.PRG
+

@@ -1,0 +1,44 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    htmlmail.exe
+
+[htmlmail.exe]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /wi /wl /wu /q /w
+    DEBUG_SAVE    = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    OBJ_DIR       = objdir
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    asinetc.ch
+    sql.ch
+    xbp.ch
+    appevent.ch
+    asinet.ch
+    memvar.ch
+    collat.ch
+    set.ch
+    gra.ch
+    natmsg.ch
+    common.ch
+    get.ch
+    font.ch
+    prompt.ch
+    std.ch
+    _maildlg.obj
+    maildlg.obj
+    mailmain.obj
+// $STOP-AUTODEPEND
+    _maildlg.prg
+    maildlg.prg
+    mailmain.prg
+

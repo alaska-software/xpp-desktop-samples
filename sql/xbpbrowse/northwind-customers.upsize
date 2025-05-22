@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+
+<config>
+
+<database_engines>
+  <dbebuild name="FOXCDX">
+     <storage name="FOXDBE"/>
+     <order   name="CDXDBE"/>
+  </dbebuild>
+  <dbeload name="pgdbe"/>
+</database_engines>
+
+<connection name="test"
+            dbe="pgdbe"
+            srv="localhost"
+            uid="postgres"
+            pwd="postgres"
+            database="xppsamples"/>
+
+<table name = "customers"
+       dbe  = "foxcdx"
+       dbf  = "..\..\data\northwind\dbf\customers.dbf">
+</table>
+
+<upsize table="customers" connection="test" mode="isam"/>
+
+</config>

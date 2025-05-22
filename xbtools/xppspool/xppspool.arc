@@ -1,0 +1,20 @@
+//////////////////////////////////////////////////////////////////////
+//
+//  XPPSPOOL.ARC
+//
+//  Copyright:
+//       Alaska Software, (c) 1998-2025. All rights reserved.         
+//  
+//  Contents:
+//       XPPSPOOL resource file
+//   
+//////////////////////////////////////////////////////////////////////
+
+
+#include "xppspool.ch"
+
+ICON    ID_APPNAME   = "XPPSPOOL.ICO"
+
+
+/* EOF */
+

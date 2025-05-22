@@ -1,0 +1,45 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    SCOPE.EXE
+
+[SCOPE.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q
+    DEBUG_SAVE    = yes
+    GUI           = no
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    xb2.ch
+    common.ch
+    ads.ch
+    dmlb.ch
+    error.ch
+    dac.ch
+    adsext.ch
+    sql.ch
+    natmsg.ch
+    dll.ch
+    get.ch
+    std.ch
+    prompt.ch
+    adsdbe.ch
+    memvar.ch
+    set.ch
+    collat.ch
+    ADSEXT.obj
+    SCOPE.obj
+// $STOP-AUTODEPEND
+    ADAC20B.LIB
+    ADSUTIL.LIB
+    ADSEXT.PRG
+    SCOPE.PRG
+

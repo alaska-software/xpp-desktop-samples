@@ -1,0 +1,50 @@
+[PROJECT]
+    DEBUG         = yes
+    VERSION       = 2.3
+    PROJECT.XPJ
+
+[PROJECT.XPJ]
+    COMLINK.EXE
+
+[COMLINK.EXE]
+    COMPILE       = xpp
+    COMPILE_FLAGS = /q
+    DEBUG         = yes
+    GUI           = yes
+    LINKER        = alink
+    LINK_FLAGS    = 
+    RC_COMPILE    = arc
+    RC_FLAGS      =
+    INTERMEDIATE_DEBUG   = .debug
+    INTERMEDIATE_RELEASE = .release
+// $START-AUTODEPEND
+    APPEVENT.CH
+    COLLAT.CH
+    COMMON.CH
+    FILEIO.CH
+    GET.CH
+    GRA.CH
+    MEMVAR.CH
+    NATMSG.CH
+    PROMPT.CH
+    SET.CH
+    STD.CH
+    TRANSMIT.CH
+    XBP.CH
+    XBTCOM.CH
+    COMLINK.OBJ
+    CONFDIAL.OBJ
+    PROGRESS.OBJ
+    RCVFILE.OBJ
+    SENDFILE.OBJ
+    COMLINK.RES
+// $STOP-AUTODEPEND
+    COMLINK.ARC
+    XBTBASE1.LIB
+    XBTBASE2.LIB
+    COMLINK.PRG
+    CONFDIAL.PRG
+    PROGRESS.PRG
+    RCVFILE.PRG
+    SENDFILE.PRG
+    XPPUI2.LIB
